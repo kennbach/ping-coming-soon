@@ -5,6 +5,7 @@
     <meta name="description" content="Ping Coming Soon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" rel="preload" />
+    <script src="./js//validate-form.js" defer></script>
     <script
       src="https://kit.fontawesome.com/247f78e130.js"
       crossorigin="anonymous"
@@ -25,16 +26,19 @@
           We are launching <strong class="tagline-strong">soon!</strong>
         </h1>
         <p class="form-title">Subscribe and get notified</p>
-        <form action="#" class="subscription-form">
+        <form name="subscribe" action="#" class="subscription-form">
           <label for="email" class="sr-only">Enter your email address:</label>
           <input
             name="email"
+            id="email"
             class="form-input-email"
             value=""
-            type="email"
+            type="text"
             placeholder="Your email address..."
-            required
           />
+          <em id="invalid-email-message"
+            >Please provide a valid email address</em
+          >
           <button class="form-btn" type="submit">Notify Me</button>
         </form>
         <div class="dashboard-preview">

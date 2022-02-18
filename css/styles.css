@@ -159,9 +159,20 @@ main .form-input-email::placeholder {
   color: var(--color-secondary-1);
   text-align: left;
 }
-main .form-input-email::invalid {
-  border: 1px solid var(--color-secondary-2);
+
+.invalid {
+  border: 1px solid var(--color-secondary-2) !important;
 }
+
+#invalid-email-message {
+  color: var(--color-secondary-2);
+  font-size: 1rem;
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 2em;
+  display: none;
+}
+
 main .form-btn {
   display: block;
   width: 100%;

@@ -130,12 +130,11 @@ main {
   color: var(--color-neutral-2);
   padding: 0 1em 2.5em 1em;
 }
-
 main form {
   min-width: 100%;
   padding: 0 1em 3.2em 1em;
 }
-main .subscription-form {
+.subscription-form {
   justify-self: center;
   align-self: start;
 
@@ -145,7 +144,7 @@ main .subscription-form {
 
   max-width: var(--width-mobile);
 }
-main .form-input-email {
+.form-input-email {
   padding-left: 2.5em;
   text-align: left;
   width: 100%;
@@ -155,15 +154,13 @@ main .form-input-email {
   height: 40px;
   margin-bottom: 0.9em;
 }
-main .form-input-email::placeholder {
+.form-input-email::placeholder {
   color: var(--color-secondary-1);
   text-align: left;
 }
-
 .invalid {
   border: 1px solid var(--color-secondary-2) !important;
 }
-
 #invalid-email-message {
   color: var(--color-secondary-2);
   font-size: 1rem;
@@ -172,8 +169,7 @@ main .form-input-email::placeholder {
   padding-bottom: 2em;
   display: none;
 }
-
-main .form-btn {
+.form-btn {
   display: block;
   width: 100%;
   height: 40px;
@@ -189,7 +185,7 @@ main .form-btn {
   border-radius: 20px;
   box-shadow: var(--btn-box-shadow);
 }
-main .dashboard-preview {
+.dashboard-preview {
   line-height: 0;
   padding: 0 0.75em;
 }
@@ -267,17 +263,19 @@ nav.social ul {
     padding-top: 0.4em;
     padding-bottom: 1.8em;
   }
-  main form {
+  .subscription-form {
     padding: 0;
     margin: 0;
-  }
-  main .subscription-form {
     display: grid;
+    grid-template-areas:
+      "email button"
+      "error .";
     grid-template-columns: 2fr 1fr;
-    gap: 20px;
+    gap: 0 20px;
     /* margin: 3em 200px 5em 200px; */
   }
-  main .form-input-email {
+  .form-input-email {
+    grid-area: email;
     padding: 0;
     margin: 0;
     height: 56px;
@@ -285,20 +283,28 @@ nav.social ul {
     font-size: 2rem;
     padding-left: 2em;
   }
-  main .form-btn {
+  #invalid-email-message {
+    grid-area: error;
+    justify-self: start;
+    font-size: 1.3rem;
+    text-align: left;
+    padding: 0.5em 0 0 3.5em;
+    font-style: italic;
+  }
+  .form-btn {
+    grid-area: button;
     padding: 0;
     margin: 0;
     height: 56px;
     border-radius: 28px;
   }
-  main .dashboard-preview {
+  .dashboard-preview {
     line-height: 0;
-    padding-top: 4.5em;
+    padding-top: 3.5em;
   }
   footer {
     max-width: var(--width-card-desktop);
     margin-top: 65px;
   }
 }
-
 /**************** END Desktop Styles ****************/
